@@ -36,7 +36,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.0.7",
     "prettier": "^3.8.1",
-    "prettier-eslint": "^16.4.2",
+    "prettier-eslint": "^17.1.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4.2.2",
