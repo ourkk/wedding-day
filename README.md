@@ -64,7 +64,7 @@ build production:
 bun run build
 ```
 
-ถ้าต้องการใช้ npm ก็สามารถใช้ `npm install`, `npm run dev` และ `npm run build` ได้เช่นกัน
+โปรเจกต์นี้ใช้ Bun: `bun install`, `bun run dev` และ `bun run build`
 
 ---
 
