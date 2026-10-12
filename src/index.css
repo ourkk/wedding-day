@@ -205,12 +205,14 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
+    /* Content scrolls across a fixed atmosphere; the next section wipes over it. */
+    clip-path: inset(0);
   }
 
   .theme-section::before,
   .theme-section::after {
     content: '';
-    position: absolute;
+    position: fixed;
     inset: -25%;
     z-index: 0;
     pointer-events: none;
