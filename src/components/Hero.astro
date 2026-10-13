@@ -16,9 +16,12 @@ const { themes } = Astro.props
 
 <section
   id="landing"
-  class="bg-background flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center"
+  class="wedding-hero bg-background flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center"
 >
-  <p class="mt-50 mb-8 text-[10px] tracking-[0.35em] text-white uppercase">
+  <canvas id="wedding-canvas" aria-hidden="true"></canvas>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <audio id="wedding-music" src="/audio/there-is-romance.mp3" preload="none" autoplay loop></audio>
+  <p class="hero-eyebrow mt-50 mb-8 text-[10px] tracking-[0.35em] text-white uppercase">
     A collection of moments
   </p>
 
@@ -51,15 +54,58 @@ const { themes } = Astro.props
   </a>
 </section>
 
+<script>
+  import { initWeddingHero } from '@/scripts/wedding-hero'
+
+  initWeddingHero()
+</script>
+
 <style>
-  section.bg-background {
+  .wedding-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    /* Clip viewport-fixed layers at this section's scrolling boundary. */
+    clip-path: inset(0);
+    min-height: 100svh;
+    padding-bottom: 2rem;
+  }
+
+  #wedding-canvas,
+  .hero-shade {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .hero-shade {
+    background: linear-gradient(180deg, #17152510 25%, #17152536 52%, #171525b8 100%);
+  }
+
+  .wedding-hero::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
     background:
-      linear-gradient(to right bottom, rgba(83, 81, 124, 0.1), rgb(83, 81, 124, 0.1)),
+      linear-gradient(to right bottom, rgba(83, 81, 124, 0.1), rgba(83, 81, 124, 0.1)),
       url('/kk_00232-mobile.webp') no-repeat 48% center/cover;
   }
 
+  .hero-eyebrow {
+    margin-top: clamp(15rem, 40svh, 32rem);
+  }
+
+  section.bg-background {
+    background: transparent;
+  }
+
   @media (min-width: 768px) {
-    section.bg-background {
+    .wedding-hero::before {
       background:
         linear-gradient(to right bottom, rgba(83, 81, 124, 0.1), rgb(83, 81, 124, 0.1)),
         url('/kk_00232-web.webp') no-repeat center/cover;
