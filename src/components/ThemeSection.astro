@@ -95,9 +95,7 @@ const photoCount = theme.images.length
           {theme.title}
         </h2>
         <div class={`w-10 h-px ${theme.dividerClass} mb-3`}></div>
-        <p class={`text-sm max-w-sm leading-relaxed ${theme.subtitleClass}`}>
-          {theme.subtitle}
-        </p>
+        <p class={`text-sm max-w-sm leading-relaxed ${theme.subtitleClass}`}>{theme.subtitle}</p>
       </div>
       <p
         class={`font-serif text-7xl md:text-8xl font-light leading-none select-none ${theme.countClass}`}
@@ -109,11 +107,67 @@ const photoCount = theme.images.length
     <!-- Photo groups -->
     <div class="py-8 md:py-12">
       <div class="flex flex-col gap-20 md:gap-28 lg:gap-36">
-        {
-          photoGroups.map((group) => {
-            if (group.pattern === 'single-center') {
-              return (
-                <div class="mx-auto w-full max-w-sm md:max-w-md">
+        {photoGroups.map((group) => {
+          if (group.pattern === 'single-center') {
+            return (
+              <div class="mx-auto w-full max-w-sm md:max-w-md">
+                <div class="relative w-full overflow-hidden" style="aspect-ratio: 2/3">
+                  <img
+                    src={group.photos[0].src}
+                    alt={group.photos[0].alt}
+                    loading="lazy"
+                    class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+              </div>
+            )
+          }
+          if (group.pattern === 'single-wide') {
+            return (
+              <div class="mx-auto w-full max-w-2xl lg:max-w-3xl">
+                <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2">
+                  <img
+                    src={group.photos[0].src}
+                    alt={group.photos[0].alt}
+                    loading="lazy"
+                    class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+              </div>
+            )
+          }
+          if (group.pattern === 'single-left') {
+            return (
+              <div class="mr-auto w-full max-w-sm md:max-w-md md:pl-8 lg:pl-16">
+                <div class="relative w-full overflow-hidden" style="aspect-ratio: 2/3">
+                  <img
+                    src={group.photos[0].src}
+                    alt={group.photos[0].alt}
+                    loading="lazy"
+                    class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+              </div>
+            )
+          }
+          if (group.pattern === 'single-right') {
+            return (
+              <div class="ml-auto w-full max-w-sm md:max-w-md md:pr-8 lg:pr-16">
+                <div class="relative w-full overflow-hidden" style="aspect-ratio: 2/3">
+                  <img
+                    src={group.photos[0].src}
+                    alt={group.photos[0].alt}
+                    loading="lazy"
+                    class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+              </div>
+            )
+          }
+          if (group.pattern === 'two-side') {
+            return (
+              <div class="flex flex-col items-center gap-10 md:flex-row md:items-start md:gap-8 lg:gap-12">
+                <div class="w-full max-w-xs md:max-w-none md:flex-1">
                   <div class="relative w-full overflow-hidden" style="aspect-ratio: 2/3">
                     <img
                       src={group.photos[0].src}
@@ -123,78 +177,20 @@ const photoCount = theme.images.length
                     />
                   </div>
                 </div>
-              )
-            }
-            if (group.pattern === 'single-wide') {
-              return (
-                <div class="mx-auto w-full max-w-2xl lg:max-w-3xl">
-                  <div class="relative w-full overflow-hidden" style="aspect-ratio: 3/2">
-                    <img
-                      src={group.photos[0].src}
-                      alt={group.photos[0].alt}
-                      loading="lazy"
-                      class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
-                    />
-                  </div>
-                </div>
-              )
-            }
-            if (group.pattern === 'single-left') {
-              return (
-                <div class="mr-auto w-full max-w-sm md:max-w-md md:pl-8 lg:pl-16">
+                <div class="w-full max-w-xs md:mt-16 md:max-w-none md:flex-1 lg:mt-24">
                   <div class="relative w-full overflow-hidden" style="aspect-ratio: 2/3">
                     <img
-                      src={group.photos[0].src}
-                      alt={group.photos[0].alt}
+                      src={group.photos[1].src}
+                      alt={group.photos[1].alt}
                       loading="lazy"
                       class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
                     />
                   </div>
                 </div>
-              )
-            }
-            if (group.pattern === 'single-right') {
-              return (
-                <div class="ml-auto w-full max-w-sm md:max-w-md md:pr-8 lg:pr-16">
-                  <div class="relative w-full overflow-hidden" style="aspect-ratio: 2/3">
-                    <img
-                      src={group.photos[0].src}
-                      alt={group.photos[0].alt}
-                      loading="lazy"
-                      class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
-                    />
-                  </div>
-                </div>
-              )
-            }
-            if (group.pattern === 'two-side') {
-              return (
-                <div class="flex flex-col items-center gap-10 md:flex-row md:items-start md:gap-8 lg:gap-12">
-                  <div class="w-full max-w-xs md:max-w-none md:flex-1">
-                    <div class="relative w-full overflow-hidden" style="aspect-ratio: 2/3">
-                      <img
-                        src={group.photos[0].src}
-                        alt={group.photos[0].alt}
-                        loading="lazy"
-                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
-                      />
-                    </div>
-                  </div>
-                  <div class="w-full max-w-xs md:mt-16 md:max-w-none md:flex-1 lg:mt-24">
-                    <div class="relative w-full overflow-hidden" style="aspect-ratio: 2/3">
-                      <img
-                        src={group.photos[1].src}
-                        alt={group.photos[1].alt}
-                        loading="lazy"
-                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )
-            }
-          })
-        }
+              </div>
+            )
+          }
+        })}
       </div>
     </div>
   </div>

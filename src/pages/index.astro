@@ -21,9 +21,7 @@ const themeLinks = themes.map(({ id, number, title }) => ({ id, number, title })
 <html lang="th">
   <head>
     <GalleryHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <GoogleFontsOptimizer
-      url="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600&family=Pattaya&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
-    />
+    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600&family=Pattaya&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&display=swap" />
     <script>
       import * as Cronitor from '@cronitorio/cronitor-rum'
 
@@ -41,7 +39,9 @@ const themeLinks = themes.map(({ id, number, title }) => ({ id, number, title })
       <VenueSection />
       <ScheduleSection />
       <div id="gallery">
-        {themes.map((theme) => <ThemeSection theme={theme} />)}
+        {themes.map((theme) => (
+          <ThemeSection theme={theme} />
+        ))}
       </div>
       <FAQSection />
       <CreditsSection />

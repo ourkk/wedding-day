@@ -3,11 +3,11 @@
   "version": "1.2.0",
   "type": "module",
   "dependencies": {
-    "@astrojs/mdx": "^8.0.3",
+    "@astrojs/mdx": "^8.1.0",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@cronitorio/cronitor-rum": "^0.4.2",
-    "astro": "^7.3.8",
+    "astro": "^7.4.0",
     "astro-google-fonts-optimizer": "^0.2.2",
     "astro-seo": "^1.2.0",
     "dayjs": "^1.11.23"
@@ -27,10 +27,10 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.3.3",
-    "@typescript-eslint/eslint-plugin": "^8.71.1",
-    "@typescript-eslint/parser": "^8.71.1",
+    "@typescript-eslint/eslint-plugin": "^8.71.2",
+    "@typescript-eslint/parser": "^8.71.2",
     "astro-compress": "^2.4.3",
-    "eslint": "^10.12.0",
+    "eslint": "^10.13.0",
     "eslint-plugin-astro": "^3.2.1",
     "globals": "^17.13.0",
     "husky": "^9.1.7",

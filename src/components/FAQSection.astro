@@ -63,35 +63,33 @@ const faqData: FAQCategory[] = [
     </div>
 
     <div class="space-y-10">
-      {
-        faqData.map((category) => (
-          <div>
-            <h3 class="text-foreground mb-4 font-serif text-lg">{category.title}</h3>
-            <div class="divide-border border-border divide-y border-t">
-              {category.items.map((item) => (
-                <details class="group py-1">
-                  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-3 text-sm">
-                    <span class="text-foreground">{item.q}</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </summary>
-                  <div class="text-muted-foreground pb-4 text-sm leading-relaxed">{item.a}</div>
-                </details>
-              ))}
-            </div>
+      {faqData.map((category) => (
+        <div>
+          <h3 class="text-foreground mb-4 font-serif text-lg">{category.title}</h3>
+          <div class="divide-border border-border divide-y border-t">
+            {category.items.map((item) => (
+              <details class="group py-1">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-3 text-sm">
+                  <span class="text-foreground">{item.q}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </summary>
+                <div class="text-muted-foreground pb-4 text-sm leading-relaxed">{item.a}</div>
+              </details>
+            ))}
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
   </div>
 </section>
