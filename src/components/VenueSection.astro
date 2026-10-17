@@ -33,60 +33,58 @@ const venues: VenueCardData[] = [
     </div>
 
     <div class="flex flex-col gap-6 md:flex-row">
-      {
-        venues.map((venue) => (
-          <div class="border-border flex-1 rounded-sm border p-8 text-center md:p-10">
-            <h3 class="text-foreground mb-4 font-serif text-2xl md:text-3xl">{venue.title}</h3>
+      {venues.map((venue) => (
+        <div class="border-border flex-1 rounded-sm border p-8 text-center md:p-10">
+          <h3 class="text-foreground mb-4 font-serif text-2xl md:text-3xl">{venue.title}</h3>
 
-            <div class="text-muted-foreground mb-4 flex items-center justify-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <>
-                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                  <line x1="16" x2="16" y1="2" y2="6" />
-                  <line x1="8" x2="8" y1="2" y2="6" />
-                  <line x1="3" x2="21" y1="10" y2="10" />
-                </>
-              </svg>
-              <span class="text-sm">{venue.date}</span>
-            </div>
-
-            <div class="text-muted-foreground mb-6 flex items-start justify-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="mt-0.5 h-4 w-4 shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <>
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </>
-              </svg>
-              <span class="text-sm leading-relaxed">{venue.address}</span>
-            </div>
-
-            <div
-              aria-disabled="true"
-              class="text-muted-foreground/50 border-border inline-block border px-5 py-2.5 text-[10px] tracking-[0.2em] uppercase transition-all duration-200"
+          <div class="text-muted-foreground mb-4 flex items-center justify-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              เปิดแผนที่
-            </div>
+              <>
+                <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                <line x1="16" x2="16" y1="2" y2="6" />
+                <line x1="8" x2="8" y1="2" y2="6" />
+                <line x1="3" x2="21" y1="10" y2="10" />
+              </>
+            </svg>
+            <span class="text-sm">{venue.date}</span>
           </div>
-        ))
-      }
+
+          <div class="text-muted-foreground mb-6 flex items-start justify-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="mt-0.5 h-4 w-4 shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <>
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </>
+            </svg>
+            <span class="text-sm leading-relaxed">{venue.address}</span>
+          </div>
+
+          <div
+            aria-disabled="true"
+            class="text-muted-foreground/50 border-border inline-block border px-5 py-2.5 text-[10px] tracking-[0.2em] uppercase transition-all duration-200"
+          >
+            เปิดแผนที่
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

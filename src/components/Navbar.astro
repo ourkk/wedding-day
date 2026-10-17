@@ -27,18 +27,16 @@ const navLinks = [
 
     <!-- Default nav -->
     <ul id="nav-default" class="hidden items-center gap-8 transition-all duration-300 sm:flex">
-      {
-        navLinks.map((link) => (
-          <li>
-            <a
-              href={`#${link.id}`}
-              class="text-muted-foreground hover:text-foreground text-[11px] tracking-[0.18em] uppercase transition-colors duration-200"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
-      }
+      {navLinks.map((link) => (
+        <li>
+          <a
+            href={`#${link.id}`}
+            class="text-muted-foreground hover:text-foreground text-[11px] tracking-[0.18em] uppercase transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
     </ul>
 
     <!-- Theme nav (shown when in gallery) -->
@@ -46,19 +44,17 @@ const navLinks = [
       id="nav-themes"
       class="pointer-events-none absolute hidden items-center gap-6 opacity-0 transition-all duration-300 sm:flex"
     >
-      {
-        themes.map((t) => (
-          <li>
-            <a
-              href={`#${t.id}`}
-              class="text-muted-foreground hover:text-foreground text-[11px] tracking-[0.18em] uppercase transition-colors duration-200"
-            >
-              <span class="mr-1 opacity-50">{t.number}</span>
-              {t.title}
-            </a>
-          </li>
-        ))
-      }
+      {themes.map((t) => (
+        <li>
+          <a
+            href={`#${t.id}`}
+            class="text-muted-foreground hover:text-foreground text-[11px] tracking-[0.18em] uppercase transition-colors duration-200"
+          >
+            <span class="mr-1 opacity-50">{t.number}</span>
+            {t.title}
+          </a>
+        </li>
+      ))}
     </ul>
   </div>
 </nav>

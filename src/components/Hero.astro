@@ -33,16 +33,14 @@ const { themes } = Astro.props
 
   <!-- Theme quick links -->
   <div class="mt-12 grid grid-cols-2 gap-3 sm:flex sm:gap-6">
-    {
-      themes.map((t) => (
-        <a
-          href={`#${t.id}`}
-          class="border-border border px-4 py-2.5 text-[10px] tracking-[0.2em] text-white/70 uppercase transition-all duration-200 hover:border-white/30 hover:text-white"
-        >
-          {t.number} {t.title}
-        </a>
-      ))
-    }
+    {themes.map((t) => (
+      <a
+        href={`#${t.id}`}
+        class="border-border border px-4 py-2.5 text-[10px] tracking-[0.2em] text-white/70 uppercase transition-all duration-200 hover:border-white/30 hover:text-white"
+      >
+        {t.number} {t.title}
+      </a>
+    ))}
   </div>
 
   <a
