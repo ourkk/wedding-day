@@ -102,3 +102,9 @@ name = "osv-scanner"
 [[exclude]]
 plugins = ["zizmor", "actionlint"]
 file_patterns = [".github/workflows/deploy.yml"]
+
+# YAML formatting is enforced by `prettier --check` in Build and Tests using .prettierrc,
+# whose yml override (double quotes) Qlty's bundled prettier does not apply.
+[[exclude]]
+plugins = ["prettier"]
+file_patterns = ["**/*.yml", "**/*.yaml"]
